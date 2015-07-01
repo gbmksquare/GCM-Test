@@ -12,6 +12,7 @@
 		165BFD461B43A0D2009E7354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165BFD441B43A0D2009E7354 /* Main.storyboard */; };
 		165BFD481B43A0D2009E7354 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165BFD471B43A0D2009E7354 /* Images.xcassets */; };
 		165BFD4B1B43A0D2009E7354 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165BFD491B43A0D2009E7354 /* LaunchScreen.xib */; };
+		165BFD651B43A5F9009E7354 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 165BFD641B43A5F9009E7354 /* GoogleService-Info.plist */; };
 		9327B910F972B6EB6200F225 /* libPods-GCM-Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B367AC933BC840605CE64B35 /* libPods-GCM-Test.a */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 		165BFD451B43A0D2009E7354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		165BFD471B43A0D2009E7354 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		165BFD4A1B43A0D2009E7354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		165BFD641B43A5F9009E7354 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		165BFD661B43A637009E7354 /* GCM-Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCM-Test-Bridging-Header.h"; sourceTree = "<group>"; };
 		79E450FFB5121FF00A85327E /* Pods-GCM-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCM-Test.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-GCM-Test/Pods-GCM-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		B367AC933BC840605CE64B35 /* libPods-GCM-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GCM-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9ABECF5C583837472BDEE5 /* Pods-GCM-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCM-Test.release.xcconfig"; path = "../Pods/Target Support Files/Pods-GCM-Test/Pods-GCM-Test.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				165BFD401B43A0D2009E7354 /* AppDelegate.swift */,
+				165BFD661B43A637009E7354 /* GCM-Test-Bridging-Header.h */,
+				165BFD641B43A5F9009E7354 /* GoogleService-Info.plist */,
 				165BFD3F1B43A0D2009E7354 /* Info.plist */,
 			);
 			name = Application;
@@ -153,6 +158,11 @@
 				TargetAttributes = {
 					165BFD3A1B43A0D2009E7354 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -180,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165BFD461B43A0D2009E7354 /* Main.storyboard in Resources */,
+				165BFD651B43A5F9009E7354 /* GoogleService-Info.plist in Resources */,
 				165BFD4B1B43A0D2009E7354 /* LaunchScreen.xib in Resources */,
 				165BFD481B43A0D2009E7354 /* Images.xcassets in Resources */,
 			);
@@ -338,9 +349,15 @@
 			baseConfigurationReference = 79E450FFB5121FF00A85327E /* Pods-GCM-Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: BUMMO KOO (MTTAM6ZCV2)";
 				INFOPLIST_FILE = "GCM-Test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f6299c0c-9303-4c67-8005-9ee5dd6d818d";
+				SWIFT_OBJC_BRIDGING_HEADER = "GCM-Test/GCM-Test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -349,9 +366,14 @@
 			baseConfigurationReference = BD9ABECF5C583837472BDEE5 /* Pods-GCM-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BUMMO KOO (3ZTVE7CS5L)";
 				INFOPLIST_FILE = "GCM-Test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "256c0bb0-8fda-42dd-8fa5-6a8e3917cfb9";
+				SWIFT_OBJC_BRIDGING_HEADER = "GCM-Test/GCM-Test-Bridging-Header.h";
 			};
 			name = Release;
 		};
